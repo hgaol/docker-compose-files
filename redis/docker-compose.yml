@@ -1,0 +1,22 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  redis:
+    container_name: myredis
+    image: redis:5.0.2
+    command: redis-server /usr/local/etc/redis/redis.conf
+    restart: always
+    volumes:
+      - /Users/hgao/Mine/soft/docker/volumes/redis/data:/data
+      - /Users/hgao/Mine/soft/docker/volumes/redis/redis.conf:/usr/local/etc/redis/redis.conf 
+    ports:
+      - 6379:6379
+    # environment:
+
+  # adminer:
+    # image: adminer
+    # restart: always
+    # ports:
+    #   - 18080:8080

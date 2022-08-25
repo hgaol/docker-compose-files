@@ -1,0 +1,12 @@
+version: '2'
+services:
+  kafka-manager:
+    container_name: my_kafka_manager
+    image: sheepkiller/kafka-manager
+    ports:
+      - 9000:9000
+    environment:
+      APPLICATION_SECRET: letmein
+      ZK_HOSTS: "localhost:2181"
+    # volumes:
+      # - /Users/hgao/Mine/soft/docker/volumes/kafka/kafka/data/kafka-log:/tmp/kafka-logs

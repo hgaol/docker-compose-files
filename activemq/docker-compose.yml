@@ -1,0 +1,23 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  activemq:
+    container_name: myactivemq
+    image: webcenter/activemq:5.14.3
+    restart: always
+    volumes:
+      - /Users/hgao/Mine/soft/docker/volumes/activemq/data:/data
+      - /Users/hgao/Mine/soft/docker/volumes/activemq/log:/var/log/activemq
+    ports:
+      # webui port
+      - 8161:8161
+      - 61616:61616
+      - 61613:61613
+    environment:
+      ACTIVEMQ_CONFIG_MINMEMORY: 512
+      ACTIVEMQ_CONFIG_MAXMEMORY: 2048
+      ACTIVEMQ_ADMIN_LOGIN: 'admin' 
+      ACTIVEMQ_ADMIN_PASSWORD: 'admin' 
+
