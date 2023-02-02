@@ -7,7 +7,8 @@ services:
     hostname: kafka
     ports:
       - 9092:9092
-      - 2221:2181
+      #- 2221:2181
+      - 2181:2181
     environment:
       ADVERTISED_HOST: 127.0.0.1
       # ADVERTISED_HOST: 172.20.29.54
@@ -25,6 +26,6 @@ services:
       - 9000:9000
     environment:
       APPLICATION_SECRET: letmein
-      ZK_HOSTS: "kafka:2281"
+      ZK_HOSTS: "kafka:2181"
     # volumes:
       # - /Users/hgao/Mine/soft/docker/volumes/kafka/kafka/data/kafka-log:/tmp/kafka-logs
